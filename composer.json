@@ -3,7 +3,6 @@
     "require": {
         "yiisoft/yii2": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "cebe/yii2-gravatar": "*",
         "erusev/parsedown": "*"
     },
     "require-dev": {

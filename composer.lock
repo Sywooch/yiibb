@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b3a6da08bf8431aaa0206d9e0ea8660",
-    "content-hash": "2567a94663aee1e8f6e51f9392de5e66",
+    "hash": "40fff1202163789bd55c2e3165a22f68",
+    "content-hash": "a9013721967773f29f581e33fdebeb40",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -205,47 +205,6 @@
                 "markdown-extra"
             ],
             "time": "2016-02-09 22:09:46"
-        },
-        {
-            "name": "cebe/yii2-gravatar",
-            "version": "dev-master",
-            "target-dir": "cebe/gravatar",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cebe/yii2-gravatar.git",
-                "reference": "3faf3a3d08975e7b1710aeae25db15209f36f657"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cebe/yii2-gravatar/zipball/3faf3a3d08975e7b1710aeae25db15209f36f657",
-                "reference": "3faf3a3d08975e7b1710aeae25db15209f36f657",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-0": {
-                    "cebe\\gravatar\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Carsten Brandt",
-                    "email": "mail@cebe.cc"
-                }
-            ],
-            "description": "Gravatar Widget for Yii 2",
-            "keywords": [
-                "gravatar",
-                "yii"
-            ],
-            "time": "2015-07-20 20:57:30"
         },
         {
             "name": "erusev/parsedown",
@@ -684,12 +643,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "e196aa3fe1717ceb8b0027b6a12d7de340a2b7d0"
+                "reference": "a29ed1039604a576329c8d33138d29065d9f98d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/e196aa3fe1717ceb8b0027b6a12d7de340a2b7d0",
-                "reference": "e196aa3fe1717ceb8b0027b6a12d7de340a2b7d0",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/a29ed1039604a576329c8d33138d29065d9f98d5",
+                "reference": "a29ed1039604a576329c8d33138d29065d9f98d5",
                 "shasum": ""
             },
             "require": {
@@ -723,7 +682,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2016-02-25 14:59:15"
+            "time": "2016-03-06 21:22:38"
         }
     ],
     "aliases": [],
