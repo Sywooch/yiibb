@@ -6,8 +6,8 @@ use yii\web\Controller;
 
 class AuthController extends Controller
 {
-    public function actionConnectForm()
+    public function actionLoginForm()
     {
-        return $this->render('/auth/connect');
+        return $this->render('/auth/auth/login');
     }
 }
