@@ -87,7 +87,7 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 .pun .actions span {
   padding-left: 16px;
   padding-right: 8px;
-  background: url(Air/img/bull.png) center left no-repeat;
+  background: url(/img/bull.png) center left no-repeat;
   display: inline-block;
   line-height: normal; }
 
@@ -236,7 +236,7 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
   float: right; }
 
 #brdwelcome li span {
-  background: url(Air/img/bull.png) center left no-repeat;
+  background: url(/img/bull.png) center left no-repeat;
   padding-left: 18px;
   margin-right: 3px;
   display: inline-block;
@@ -277,7 +277,7 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
   display: inline; }
 
 .pun #brdfooter #modcontrols dd span {
-  background: url(Air/img/bull.png) center left no-repeat;
+  background: url(/img/bull.png) center left no-repeat;
   display: inline-block;
   line-height: normal;
   padding-left: 18px;
@@ -301,7 +301,7 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
   white-space: nowrap; }
 
 .pun #brdfooter #searchlinks dd span {
-  background: url(Air/img/bull.png) center left no-repeat;
+  background: url(/img/bull.png) center left no-repeat;
   display: inline-block;
   line-height: normal;
   padding-left: 18px;
@@ -311,7 +311,7 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
   padding-bottom: 0; }
 
 .pun #brdfooter #feedlinks span {
-  background: url(Air/img/feed.png) center left no-repeat;
+  background: url(/img/feed.png) center left no-repeat;
   display: inline-block;
   padding-left: 18px;
   white-space: nowrap; }
@@ -667,20 +667,20 @@ MAIN POSTS
   padding-left: 16px;
   margin-left: 8px;
   line-height: normal;
-  background: url(Air/img/bull.png) center left no-repeat; }
+  background: url(/img/bull.png) center left no-repeat; }
 
 .pun .blockpost .usercontacts {
   padding: 7px 0; }
 
 .pun .blockpost .usercontacts .email {
-  background: url(Air/img/email.png) left 65% no-repeat;
+  background: url(/img/email.png) left 65% no-repeat;
   margin-right: 5px;
   padding-left: 21px;
   display: inline-block;
   line-height: normal; }
 
 .pun .blockpost .usercontacts .website {
-  background: url(Air/img/ext.png) left 65% no-repeat;
+  background: url(/img/ext.png) left 65% no-repeat;
   padding-left: 18px;
   display: inline-block;
   line-height: normal; }
@@ -856,7 +856,7 @@ MAIN FORMS
 
 .pun .error-list li {
   padding-left: 24px;
-  background: url(Air/img/exclaim.png) center left no-repeat; }
+  background: url(/img/exclaim.png) center left no-repeat; }
 
 .pun .inform {
   padding: 0 18px; }
@@ -895,7 +895,7 @@ MAIN FORMS
   font-style: normal; }
 
 .pun .required strong {
-  background: url(Air/img/asterisk.png) center right no-repeat;
+  background: url(/img/asterisk.png) center right no-repeat;
   font-weight: normal;
   padding-right: 14px;
   white-space: pre;
@@ -937,7 +937,7 @@ MAIN FORMS
   height: 1em;
   width: 1em; }
 
-.pun input[type=text], .pun select, .pun textarea {
+.pun input[type=text], .pun input[type=password], .pun select, .pun textarea {
   font-family: Verdana, Arial, Helvetica, sans-serif; }
 
 .pun .txtarea textarea, .pun input.longinput {
@@ -957,7 +957,7 @@ MAIN FORMS
   display: inline; }
 
 .pun .blockform .bblinks li span {
-  background: url(Air/img/help.png) center left no-repeat;
+  background: url(/img/help.png) center left no-repeat;
   margin-right: 8px;
   padding-left: 20px;
   display: inline-block; }
@@ -1000,14 +1000,14 @@ MAIN FORMS
   width: auto; }
 
 .pun span.email {
-  background: url(Air/img/email.png) left 65% no-repeat;
+  background: url(/img/email.png) left 65% no-repeat;
   margin-right: 5px;
   padding-left: 21px;
   display: inline-block;
   line-height: normal; }
 
 .pun span.website {
-  background: url(Air/img/ext.png) left 65% no-repeat;
+  background: url(/img/ext.png) left 65% no-repeat;
   padding-left: 18px;
   display: inline-block;
   line-height: normal; }
@@ -1110,7 +1110,7 @@ PROFILES (+ ADMIN MENU)
   padding-left: 16px;
   margin-left: 8px;
   line-height: normal;
-  background: url(Air/img/bull.png) center left no-repeat; }
+  background: url(/img/bull.png) center left no-repeat; }
 
 #adstats .inbox, #adintro .inbox, #adalerts p {
   border-style: solid;
