@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use app\resources\assets\bundles\AppAsset;
 
-/* @var $this \yii\web\View */
+/* @var $this \app\components\web\View */
 /* @var $content string */
 
 AppAsset::register($this);
@@ -29,23 +29,22 @@ $this->title = 'YiiBB';
 
 <body>
 <?php $this->beginBody() ?>
-
-<div id="pun<pun_page>" class="pun">
+<div id="pun<?= $this->name ?>" class="pun">
     <div class="top-box"></div>
     <div class="punwrap">
         <div id="brdheader" class="block">
             <div class="box">
                 <div class="inbox" id="brdtitle">
-                    <h1><a href="index.php">My FluxBB Forum</a></h1>
+                    <h1><a href="<?= Url::toRoute('home/index') ?>">My FluxBB Forum</a></h1>
                     <div id="brddesc"><p><span>Unfortunately no one can be told what FluxBB is - you have to see it for yourself.</span></p></div>
                 </div>
                 <div class="inbox" id="brdmenu">
                     <ul>
-                        <li class="isactive" id="navindex"><a href="index.php">Index</a></li>
-                        <li id="navuserlist"><a href="userlist.php">User list</a></li>
-                        <li id="navsearch"><a href="search.php">Search</a></li>
-                        <li id="navregister"><a href="register.php">Register</a></li>
-                        <li id="navlogin"><a href="login.php">Login</a></li>
+                        <li id="navindex"><a href="<?= Url::toRoute('home/index') ?>"><?= Yii::t('app/common', 'Index') ?></a></li>
+                        <li id="navuserlist"><a href=""><?= Yii::t('app/common', 'User list') ?></a></li>
+                        <li id="navsearch"><a href=""><?= Yii::t('app/common', 'Search') ?></a></li>
+                        <li id="navregister"><a href=""><?= Yii::t('app/common', 'Register') ?></a></li>
+                        <li id="navlogin"><a href="<?= Url::toRoute('auth/auth/login-form') ?>"><?= Yii::t('app/common', 'Login') ?></a></li>
                     </ul>
                 </div>
                 <div class="inbox" id="brdwelcome">
@@ -61,11 +60,21 @@ $this->title = 'YiiBB';
             <div id="brdmain">
                 <?= $content ?>
             </div>
-            <pun_footer>
+            <div class="block" id="brdfooter">
+                <h2><span>Board footer</span></h2>
+                <div class="box">
+                    <div class="inbox" id="brdfooternav">
+                        <div class="conr">
+                            <p id="feedlinks"><span class="atom"><a href="extern.php?action=feed&amp;type=atom">Atom active topics feed</a></span></p>
+                            <p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+                        </div>
+                        <div class="clearer"></div>
+                    </div>
+                </div>
+            </div>
     </div>
     <div class="end-box"></div>
 </div>
-
 <?php $this->endBody() ?>
 </body>
 </html>
