@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use yii\db\ActiveQuery;
+
 /**
  * @property integer $id
  * @property string $name
@@ -22,7 +24,7 @@ class Category extends \yii\db\ActiveRecord
      */
     public function getForums()
     {
-        return $this->hasMany(Forum::className(), ['cat_id' => 'id'])
+        return $this->hasMany(Forum::className(), ['category_id' => 'id'])
             ->inverseOf('category');
     }
 }
