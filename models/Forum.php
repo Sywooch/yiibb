@@ -2,6 +2,9 @@
 
 namespace app\models;
 
+use yii\db\ActiveRecord;
+use yii\db\ActiveQuery;
+
 /**
  * @property integer $id
  * @property string $name
@@ -14,19 +17,27 @@ namespace app\models;
  * @property integer $last_post_id
  * @property integer $last_post_user_id
  * @property string $last_post_username
- * @property integer $display_position
+ * @property integer $position
  * @property integer $category_id
  * @property integer $status_id
  * @property string $updated_at
  * @property string $created_at
  */
-class Forum extends \yii\db\ActiveRecord
+class Forum extends ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'forums';
+        return 'forum';
+    }
+
+    /**
+     * @return ActiveQuery|Category
+     */
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'category_id']);
     }
 }

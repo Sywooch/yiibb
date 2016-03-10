@@ -3,24 +3,26 @@
 namespace app\models;
 
 use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
 /**
  * @property integer $id
  * @property string $name
- * @property integer $display_position
+ * @property integer $position
+ * @property Forum[] $forums
  */
-class Category extends \yii\db\ActiveRecord
+class Category extends ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'categories';
+        return 'category';
     }
 
     /**
-     * @return ActiveQuery
+     * @return Forum[]|ActiveQuery
      */
     public function getForums()
     {
