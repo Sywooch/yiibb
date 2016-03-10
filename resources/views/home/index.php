@@ -27,7 +27,7 @@ $this->name = 'index';
                         <div class="icon"><div class="nosize">1</div></div>
                         <div class="tclcon">
                             <div>
-                                <h3><a href="viewforum.php?id=1"><?= Yii::$app->formatter->asText($forum->name) ?></a></h3>
+                                <h3><a href="viewforum.php?id=1"><?= e($forum->name) ?></a></h3>
                                 <?php if ($forum->description): ?>
                                 <div class="forumdesc"><?= Yii::$app->formatter->asText($forum->description) ?></div>
                                 <?php endif ?>

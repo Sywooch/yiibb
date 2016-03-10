@@ -17,6 +17,11 @@
             "yii\\composer\\Installer::postCreateProject"
         ]
     },
+    "autoload": {
+        "files": [
+            "helpers/functions.php"
+        ]
+    },
     "extra": {
         "yii\\composer\\Installer::postCreateProject": {
             "setPermission": [
