@@ -2,11 +2,13 @@
 
 \app\resources\assets\bundles\AppAsset::register($this);
 
-$this->name = 'index';
+/** @var \app\models\Category[] $categories */
 
+$this->name = 'index';
 ?>
 <div class="blocktable" id="idx1">
-    <h2><span>Test category</span></h2>
+    <?php foreach ($categories as $category): ?>
+    <h2><span><?= Yii::$app->formatter->asText($category->name) ?></span></h2>
     <div class="box">
         <div class="inbox">
             <table>
@@ -19,13 +21,16 @@ $this->name = 'index';
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach($category->forums as $forum): ?>
                 <tr class="rowodd">
                     <td class="tcl">
                         <div class="icon"><div class="nosize">1</div></div>
                         <div class="tclcon">
                             <div>
-                                <h3><a href="viewforum.php?id=1">Test forum</a></h3>
-                                <div class="forumdesc">This is just a test forum</div>
+                                <h3><a href="viewforum.php?id=1"><?= Yii::$app->formatter->asText($forum->name) ?></a></h3>
+                                <?php if ($forum->description): ?>
+                                <div class="forumdesc"><?= Yii::$app->formatter->asText($forum->description) ?></div>
+                                <?php endif ?>
                             </div>
                         </div>
                     </td>
@@ -33,10 +38,12 @@ $this->name = 'index';
                     <td class="tc3">1</td>
                     <td class="tcr"><a href="viewtopic.php?pid=1#p1">2016-02-28 16:42:54</a> <span class="byuser">by Sonic</span></td>
                 </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
     </div>
+    <?php endforeach ?>
 </div>
 
 <div class="block" id="brdstats">

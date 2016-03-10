@@ -2,12 +2,17 @@
 
 namespace app\controllers;
 
+use app\models\Category;
 use yii\web\Controller;
 
 class HomeController extends Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $categories = Category::find()->all();
+
+        return $this->render('index', [
+            'categories' => $categories,
+        ]);
     }
 }

@@ -66,7 +66,7 @@ $this->title = 'YiiBB';
                     <div class="inbox" id="brdfooternav">
                         <div class="conr">
                             <p id="feedlinks"><span class="atom"><a href="extern.php?action=feed&amp;type=atom">Atom active topics feed</a></span></p>
-                            <p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+                            <p id="poweredby">Powered by <a href="http://fluxbb.org/">YiiBB</a></p>
                         </div>
                         <div class="clearer"></div>
                     </div>
