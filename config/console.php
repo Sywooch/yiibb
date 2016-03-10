@@ -6,6 +6,13 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
     'components' => [
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=yiibb',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8'
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

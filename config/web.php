@@ -11,11 +11,15 @@ $config = [
 
     'bootstrap' => [
         'debug',
+        'gii',
     ],
 
     'modules' => [
         'debug' => [
             'class' => 'yii\debug\Module',
+        ],
+        'gii' => [
+            'class' => 'yii\gii\Module',
         ],
     ],
 
@@ -35,7 +39,7 @@ $config = [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=linuxforum',
+            'dsn' => 'mysql:host=localhost;dbname=yiibb',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
