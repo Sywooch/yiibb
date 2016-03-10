@@ -14,7 +14,8 @@ return [
             'dsn' => 'mysql:host=127.0.0.1;dbname=yiibb',
             'username' => 'root',
             'password' => '',
-            'charset' => 'utf8'
+            'charset' => 'utf8',
+            'tablePrefix' => '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',

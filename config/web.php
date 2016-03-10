@@ -46,6 +46,7 @@ $config = [
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
+            'tablePrefix' => '',
         ],
         'urlManager' => [
             'enableStrictParsing' => true,
