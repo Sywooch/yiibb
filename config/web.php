@@ -30,6 +30,9 @@ $config = [
         'view' => [
             'class' => 'app\components\web\View',
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
