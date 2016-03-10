@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m160308_110130_bans extends Migration
+class m160308_110130_ban_init extends Migration
 {
     public function up()
     {
