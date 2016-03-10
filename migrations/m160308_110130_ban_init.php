@@ -6,7 +6,7 @@ class m160308_110130_ban_init extends Migration
 {
     public function up()
     {
-        $this->createTable('bans', [
+        $this->createTable('ban', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull(),
             'ip' => $this->bigInteger(20)->notNull(),
@@ -20,6 +20,6 @@ class m160308_110130_ban_init extends Migration
 
     public function down()
     {
-        $this->dropTable('bans');
+        $this->dropTable('ban');
     }
 }

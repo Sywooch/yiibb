@@ -6,11 +6,11 @@ class m160309_173009_category_init extends Migration
 {
     public function up()
     {
-        $this->createTable('categories', [
+        $this->createTable('category', [
             'id' => $this->primaryKey(),
             'name' => $this->string(255)->notNull(),
-            'display_position' => $this->smallInteger()->notNull(),
-            'status_id' => $this->smallInteger()->notNull(),
+            'position' => $this->smallInteger()->notNull()->defaultValue(0),
+            'status_id' => $this->smallInteger()->notNull()->defaultValue(1),
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),
         ]);
@@ -18,6 +18,6 @@ class m160309_173009_category_init extends Migration
 
     public function down()
     {
-        $this->dropTable('categories');
+        $this->dropTable('category');
     }
 }

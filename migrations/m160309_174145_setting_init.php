@@ -6,7 +6,7 @@ class m160309_174145_setting_init extends Migration
 {
     public function up()
     {
-        $this->createTable('settings', [
+        $this->createTable('setting', [
             'name' => $this->string(255),
             'value' => $this->text(),
             'default_value' => $this->text(),
@@ -15,6 +15,6 @@ class m160309_174145_setting_init extends Migration
 
     public function down()
     {
-        $this->dropTable('settings');
+        $this->dropTable('setting');
     }
 }
