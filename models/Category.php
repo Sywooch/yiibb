@@ -27,6 +27,7 @@ class Category extends ActiveRecord
     public function getForums()
     {
         return $this->hasMany(Forum::className(), ['category_id' => 'id'])
+            ->orderBy('position')
             ->inverseOf('category');
     }
 }
