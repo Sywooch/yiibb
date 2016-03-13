@@ -56,6 +56,9 @@ $config = [
                 // Default Routes...
                 'GET /' => 'home/index',
 
+                // Forum Routes...
+                'GET forum/<id>' => 'forum/view',
+
                 // Authentication Routes...
                 'GET login' => 'auth/auth/login-form',
                 'POST login' => 'auth/auth/login',
