@@ -8,6 +8,6 @@ class AuthController extends Controller
 {
     public function actionLoginForm()
     {
-        return $this->render('/auth/auth/login');
+        return $this->render('/auth/login');
     }
 }
