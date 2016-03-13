@@ -15,4 +15,9 @@ class HomeController extends Controller
             'categories' => $categories,
         ]);
     }
+
+    public function actionTerms()
+    {
+        return $this->render('terms');
+    }
 }
