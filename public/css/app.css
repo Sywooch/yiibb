@@ -1173,6 +1173,10 @@ html, body, .pun {
   border-color: #fff;
   color: #fff; }
 
+#brdmenu .isactive a, #brdmenu .isactive a:link {
+  border-top: 4px solid #b50000;
+  padding: 8px 16px 6px 8px; }
+
 /* Main Tables
 ----------------------------------------------------------------*/
 .pun .blocktable .box {
