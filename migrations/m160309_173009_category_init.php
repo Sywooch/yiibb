@@ -9,7 +9,7 @@ class m160309_173009_category_init extends Migration
         $this->createTable('category', [
             'id' => $this->primaryKey(),
             'name' => $this->string(255)->notNull(),
-            'position' => $this->smallInteger()->notNull()->defaultValue(0),
+            'position' => $this->smallInteger()->unsigned()->notNull()->defaultValue(1),
             'status_id' => $this->smallInteger()->notNull()->defaultValue(1),
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),

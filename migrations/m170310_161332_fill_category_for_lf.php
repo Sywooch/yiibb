@@ -6,12 +6,7 @@ class m170310_161332_fill_category_for_lf extends Migration
 {
     public function up()
     {
-        $this->fillCategory();
-    }
-
-    protected function fillCategory()
-    {
-        $names = [
+        $categories = [
             'Новости Linux',
             'Общие вопросы',
             'Дистрибутивы Linux',
@@ -22,9 +17,9 @@ class m170310_161332_fill_category_for_lf extends Migration
         ];
 
         $count = 1;
-        foreach ($names as $name) {
+        foreach ($categories as $category) {
             $this->insert('{{%category}}', [
-                'name' => $name,
+                'name' => $category,
                 'position' => $count++,
                 'status_id' => 1,
                 'updated_at' => date('Y-m-d H:i:s', time()),

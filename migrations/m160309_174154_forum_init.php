@@ -18,7 +18,7 @@ class m160309_174154_forum_init extends Migration
             'last_post_id' => $this->integer(),
             'last_post_user_id' => $this->integer(),
             'last_post_username' => $this->string(),
-            'position' => $this->smallInteger()->notNull()->defaultValue(0),
+            'position' => $this->smallInteger()->unsigned()->notNull()->defaultValue(1),
             'category_id' => $this->integer()->notNull(),
             'status_id' => $this->smallInteger()->notNull()->defaultValue(1),
             'updated_at' => $this->timestamp()->notNull(),
