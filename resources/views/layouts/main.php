@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\resources\assets\bundles\AppAsset;
+use app\widgets\Menu;
 
 /* @var $this \app\components\web\View */
 /* @var $content string */
@@ -39,13 +40,7 @@ $this->title = 'YiiBB';
                     <div id="brddesc"><p><span>Unfortunately no one can be told what FluxBB is - you have to see it for yourself.</span></p></div>
                 </div>
                 <div class="inbox" id="brdmenu">
-                    <ul>
-                        <li id="navindex"><a href="<?= Url::toRoute('home/index') ?>"><?= Yii::t('app/common', 'Index') ?></a></li>
-                        <li id="navuserlist"><a href=""><?= Yii::t('app/common', 'User list') ?></a></li>
-                        <li id="navsearch"><a href=""><?= Yii::t('app/common', 'Search') ?></a></li>
-                        <li id="navregister"><a href=""><?= Yii::t('app/common', 'Register') ?></a></li>
-                        <li id="navlogin"><a href="<?= Url::toRoute('auth/auth/login-form') ?>"><?= Yii::t('app/common', 'Login') ?></a></li>
-                    </ul>
+                    <?= Menu::widget() ?>
                 </div>
                 <div class="inbox" id="brdwelcome">
                     <p class="conl">You are not logged in.</p>
