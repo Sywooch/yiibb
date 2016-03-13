@@ -10,4 +10,9 @@ class AuthController extends Controller
     {
         return $this->render('/auth/login');
     }
+
+    public function actionRegisterForm()
+    {
+        return $this->render('/auth/register');
+    }
 }
