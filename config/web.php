@@ -56,8 +56,8 @@ $config = [
                 // Default Routes...
                 'GET /' => 'home/index',
 
-                // Forum Routes...
-                'GET forum/<id>' => 'forum/view',
+                // Home Routes...
+                'GET terms' => 'home/terms',
 
                 // Authentication Routes...
                 'GET login' => 'auth/auth/login-form',
@@ -72,6 +72,12 @@ $config = [
                 'GET password/reset/<token>' => 'auth/password/reset-form',
                 'POST password/reset' => 'auth/password/reset',
                 'POST password/email' => 'auth/password/send-email',
+
+                // User Routes...
+                'GET list' => 'user/list',
+
+                // Forum Routes...
+                'GET forum/<id:\d+>' => 'forum/view',
             ],
         ],
         'i18n' => [
