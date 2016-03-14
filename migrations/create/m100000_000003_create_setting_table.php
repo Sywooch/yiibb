@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m100000_000004_create_forum_table extends Migration
+class m100000_000003_create_setting_table extends Migration
 {
     public function up()
     {

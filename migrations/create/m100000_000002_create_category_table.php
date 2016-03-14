@@ -16,7 +16,7 @@ class m100000_000002_create_category_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(255)->notNull(),
             'position' => $this->smallInteger()->unsigned()->notNull()->defaultValue(1),
-            'status_id' => $this->smallInteger()->notNull()->defaultValue(1),
+            'status_id' => $this->boolean()->notNull()->defaultValue(true),
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),
         ], $tableOptions);

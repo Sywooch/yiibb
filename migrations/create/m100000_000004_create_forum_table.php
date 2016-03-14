@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m100000_400000_create_forum_table extends Migration
+class m100000_000004_create_forum_table extends Migration
 {
     public function up()
     {
@@ -21,12 +21,12 @@ class m100000_400000_create_forum_table extends Migration
             'count_topics' => $this->integer()->defaultValue(0),
             'count_posts' => $this->integer()->defaultValue(0),
             'last_post' => $this->integer(),
-            'last_post_id' => $this->integer(),
-            'last_post_user_id' => $this->integer(),
-            'last_post_username' => $this->string(),
+            'last_post_id' => $this->integer()->unsigned(),
+            'last_post_user_id' => $this->integer()->unsigned(),
+            'last_post_username' => $this->string(40),
             'position' => $this->smallInteger()->unsigned()->notNull()->defaultValue(1),
-            'category_id' => $this->integer()->notNull(),
-            'status_id' => $this->smallInteger()->notNull()->defaultValue(1),
+            'category_id' => $this->integer()->notNull()->unsigned(),
+            'status_id' => $this->boolean()->notNull()->defaultValue(true),
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),
         ], $tableOptions);

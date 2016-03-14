@@ -14,7 +14,7 @@ class m100000_000001_create_ban_table extends Migration
         
         $this->createTable('ban', [
             'id' => $this->primaryKey(),
-            'user_id' => $this->integer()->notNull(),
+            'user_id' => $this->integer()->unsigned()->notNull(),
             'ip' => $this->bigInteger(20)->notNull(),
             'message' => $this->text(),
             'expire' => $this->dateTime(),
