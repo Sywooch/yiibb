@@ -1450,8 +1450,7 @@ html, body, .pun {
 }
 
 #brdmenu .isactive a, #brdmenu .isactive a:link {
-  border-top: 4px solid #b50000;
-  padding: 8px 16px 6px 8px;
+  background: darken(#44699c, 7%);
 }
 
 /* Main Tables
