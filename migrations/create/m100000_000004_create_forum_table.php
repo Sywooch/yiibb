@@ -2,10 +2,16 @@
 
 use yii\db\Migration;
 
-class m160309_174154_forum_init extends Migration
+class m100000_400000_create_forum_table extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('forum', [
             'id' => $this->primaryKey(),
             'name' => $this->string(120)->notNull(),
@@ -23,7 +29,7 @@ class m160309_174154_forum_init extends Migration
             'status_id' => $this->smallInteger()->notNull()->defaultValue(1),
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),
-        ]);
+        ], $tableOptions);
     }
 
     public function down()
