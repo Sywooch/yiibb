@@ -45,3 +45,15 @@ if (!function_exists('t')) {
         return Yii::t($category, $message, $params, $language);
     }
 }
+
+if (!function_exists('setting')) {
+    /**
+     * @param $name
+     * @param null $default
+     * @return mixed|null
+     */
+    function setting($name, $default = null)
+    {
+        return Yii::$app->setting->get($name, $default = null);
+    }
+}

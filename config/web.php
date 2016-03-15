@@ -24,6 +24,12 @@ $config = [
     ],
 
     'components' => [
+        'setting' => [
+            'class' => 'app\components\setting\Setting',
+        ],
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
         'request' => [
             'cookieValidationKey' => 'jaklesHtNzHONAxk2Ca6UjR49iHgN_9U',
         ],
