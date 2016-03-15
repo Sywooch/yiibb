@@ -4,6 +4,8 @@ use yii\db\Migration;
 
 class m100000_000005_create_topic_table extends Migration
 {
+    public $tableName = '{{%topic}}';
+
     public function up()
     {
         $tableOptions = null;
@@ -12,7 +14,7 @@ class m100000_000005_create_topic_table extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('topic', [
+        $this->createTable($this->tableName, [
             'id' => $this->primaryKey(),
             'forum_id' => $this->integer()->unsigned()->notNull(),
             'subject' => $this->string(255)->notNull(),
@@ -34,6 +36,6 @@ class m100000_000005_create_topic_table extends Migration
 
     public function down()
     {
-        $this->dropTable('topic');
+        $this->dropTable($this->tableName);
     }
 }

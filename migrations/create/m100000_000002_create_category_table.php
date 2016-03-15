@@ -4,6 +4,8 @@ use yii\db\Migration;
 
 class m100000_000002_create_category_table extends Migration
 {
+    public $tableName = '{{%category}}';
+    
     public function up()
     {
         $tableOptions = null;
@@ -12,7 +14,7 @@ class m100000_000002_create_category_table extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
         
-        $this->createTable('category', [
+        $this->createTable($this->tableName, [
             'id' => $this->primaryKey(),
             'name' => $this->string(255)->notNull(),
             'position' => $this->smallInteger()->unsigned()->notNull()->defaultValue(1),
@@ -24,6 +26,6 @@ class m100000_000002_create_category_table extends Migration
 
     public function down()
     {
-        $this->dropTable('category');
+        $this->dropTable($this->tableName);
     }
 }

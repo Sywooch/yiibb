@@ -4,6 +4,8 @@ use yii\db\Migration;
 
 class m100000_000003_create_setting_table extends Migration
 {
+    public $tableName = '{{%setting}}';
+
     public function up()
     {
         $tableOptions = null;
@@ -12,15 +14,16 @@ class m100000_000003_create_setting_table extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
         
-        $this->createTable('setting', [
+        $this->createTable($this->tableName, [
             'name' => $this->string(255),
             'value' => $this->text(),
-            'default_value' => $this->text(),
         ], $tableOptions);
+
+        $this->createIndex('name', $this->tableName, 'name', true);
     }
 
     public function down()
     {
-        $this->dropTable('setting');
+        $this->dropTable($this->tableName);
     }
 }

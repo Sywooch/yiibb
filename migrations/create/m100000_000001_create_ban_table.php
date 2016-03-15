@@ -4,6 +4,8 @@ use yii\db\Migration;
 
 class m100000_000001_create_ban_table extends Migration
 {
+    public $tableName = '{{%ban}}';
+    
     public function up()
     {
         $tableOptions = null;
@@ -12,7 +14,7 @@ class m100000_000001_create_ban_table extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
         
-        $this->createTable('ban', [
+        $this->createTable($this->tableName, [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->unsigned()->notNull(),
             'ip' => $this->bigInteger(20)->notNull(),
@@ -26,6 +28,6 @@ class m100000_000001_create_ban_table extends Migration
 
     public function down()
     {
-        $this->dropTable('ban');
+        $this->dropTable($this->tableName);
     }
 }
