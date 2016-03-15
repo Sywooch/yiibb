@@ -1,7 +1,6 @@
 <?php
 namespace app\widgets;
 
-use Yii;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs as YiiBreadcrumbs;
 

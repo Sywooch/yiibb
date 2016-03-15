@@ -1,7 +1,7 @@
 <?php
 namespace app\widgets;
 
-use Yii;
+use yii;
 use yii\widgets\Menu as YiiMenu;
 
 class Menu extends YiiMenu
