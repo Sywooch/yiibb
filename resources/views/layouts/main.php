@@ -9,9 +9,6 @@ use app\widgets\Menu;
 /* @var $content string */
 
 AppAsset::register($this);
-
-$this->title = 'YiiBB';
-
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -20,9 +17,10 @@ $this->title = 'YiiBB';
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <?php if ($this->title): ?>
-        <title><?= Html::encode($this->title) ?></title>
+    <?php if (!$this->title): ?>
+        <title><?= setting('o_board_title') ?></title>
     <?php else: ?>
+        <title><?= e($this->title) ?> / <?= setting('board_title') ?></title>
     <?php endif; ?>
     <link rel="shortcut icon" href="<?= Url::to('@web/favicon.ico') ?>" />
     <?php $this->head() ?>
@@ -36,7 +34,7 @@ $this->title = 'YiiBB';
         <div id="brdheader" class="block">
             <div class="box">
                 <div class="inbox" id="brdtitle">
-                    <h1><a href="<?= Url::toRoute('home/index') ?>">My FluxBB Forum</a></h1>
+                    <h1><a href="<?= url(['home/index']) ?>"><?= setting('o_board_title') ?></a></h1>
                     <div id="brddesc"><p><span>Unfortunately no one can be told what FluxBB is - you have to see it for yourself.</span></p></div>
                 </div>
                 <div class="inbox" id="brdmenu">
