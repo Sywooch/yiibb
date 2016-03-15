@@ -7,7 +7,7 @@ $this->params['page'] = 'viewforum';
 $this->params['breadcrumbs'] = [$this->title];
 
 ?>
-<div class="linkst">
+<div class="linksb">
     <div class="inbox crumbsplus">
         <?= \app\widgets\Breadcrumbs::widget() ?>
         <div class="pagepost">

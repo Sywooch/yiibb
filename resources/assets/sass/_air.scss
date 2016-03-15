@@ -405,30 +405,18 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 /* Breadcrumbs, Postlink, Pagination
 ----------------------------------------------------------------*/
 
-.pun .linkst .inbox, .pun .linksb .inbox, .pun .postlinksb .inbox {
+.pun .linksb .inbox, .pun .postlinksb .inbox {
   overflow: hidden;
 }
 
-.pun .linksb, .pun .postlinksb, .pun .linkst, .pun .crumbs {
+.pun .linksb, .pun .postlinksb, .pun .crumbs {
   clear: both;
   position: relative;
-}
-
-.pun .linkst .crumbs {
-  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
-  font-size: 1.462em;
-  line-height: 1.211em;
-  padding: 7px 0;
 }
 
 .pun .linksb .crumbs, .pun .postlinksb .crumbs {
   font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
   font-size: 1.154em;
-}
-
-.pun .linkst .crumbsplus .pagepost {
-  border-top-style: dotted;
-  border-top-width: 1px;
 }
 
 .pun .linksb .crumbsplus .pagepost, .pun .postlinksb .crumbsplus .pagepost {
