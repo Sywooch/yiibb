@@ -31,7 +31,7 @@ class Setting extends Component
     /**
      * @var boolean whether to enable caching
      */
-    public $enableCaching = true;
+    public $enableCaching = false;
     /**
      * Configuration data
      * @var array
@@ -77,7 +77,7 @@ class Setting extends Component
             return;
         }
 
-        if ($this->cache instanceof Cache) {
+        if ($this->enableCaching && $this->cache instanceof Cache) {
             $data = $this->cache->get($this->cacheKey);
             if (isset($data)) {
                 $this->_data = $data;
@@ -90,7 +90,7 @@ class Setting extends Component
             $this->_data[$row['name']] = $row['value'];
         }
 
-        if ($this->cache instanceof Cache) {
+        if ($this->enableCaching && $this->cache instanceof Cache) {
             $this->cache->set($this->cacheKey, $this->_data);
         }
     }
