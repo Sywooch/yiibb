@@ -18,7 +18,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <?php if (!$this->title): ?>
-        <title><?= setting('o_board_title') ?></title>
+        <title><?= setting('board_title') ?></title>
     <?php else: ?>
         <title><?= e($this->title) ?> / <?= setting('board_title') ?></title>
     <?php endif; ?>
