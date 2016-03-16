@@ -1,5 +1,9 @@
 <?php
 
+use app\widgets\Breadcrumbs;
+use app\widgets\LinkPager;
+use app\widgets\TopicList;
+
 /** @var \app\models\Forum $forum */
 
 $this->title = $forum->name;
@@ -9,9 +13,9 @@ $this->params['breadcrumbs'] = [$this->title];
 ?>
 <div class="linksb">
     <div class="inbox crumbsplus">
-        <?= \app\widgets\Breadcrumbs::widget() ?>
-        <div class="pagepost">
-            <p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+        <?= Breadcrumbs::widget() ?>
+        <div class="pagelink">
+            <?= LinkPager::widget(['pagination' => $dataProvider->pagination]) ?>
         </div>
         <div class="clearer"></div>
     </div>
@@ -30,19 +34,20 @@ $this->params['breadcrumbs'] = [$this->title];
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="rowodd">
-                    <td class="tcl">
-                        <div class="icon"><div class="nosize">1</div></div>
-                        <div class="tclcon">
-                            <div>
-                                <a href="viewtopic.php?id=1">Test topic</a> <span class="byuser">by Sonic</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="tc2">0</td>
-                    <td class="tc3">4</td>
-                    <td class="tcr"><a href="viewtopic.php?pid=1#p1">2016-02-28 16:42:54</a> <span class="byuser">by Sonic</span></td>
-                </tr>
+                <?= TopicList::widget([
+                    'dataProvider' => $dataProvider,
+                    'options' => [],
+                    'layout' => "{items}",
+                    'itemOptions' => ['tag' => false],
+                    'itemView' => function ($model, $key, $index, $widget) use ($dataProvider) {
+                        return $this->render('_view_list', [
+                            'model' => $model,
+                            'key' => $key,
+                            'index' => $index,
+                            'widget' => $widget,
+                        ]);
+                    },
+                ]) ?>
                 </tbody>
             </table>
         </div>
@@ -52,7 +57,9 @@ $this->params['breadcrumbs'] = [$this->title];
 <div class="linksb">
     <div class="inbox crumbsplus">
         <div class="pagepost">
-            <p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+            <div class="pagelink">
+                <?= LinkPager::widget(['pagination' => $dataProvider->pagination]) ?>
+            </div>
         </div>
         <?= \app\widgets\Breadcrumbs::widget() ?>
         <div class="clearer"></div>
