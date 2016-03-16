@@ -83,7 +83,12 @@ $config = [
                 'GET list' => 'user/list',
 
                 // Forum Routes...
+                'GET forum/<id:\d+>/page/<page:\d+>' => 'forum/view',
                 'GET forum/<id:\d+>' => 'forum/view',
+
+                // Topic Routes...
+                'GET topic/<id:\d+>/page/<page:\d+>' => 'topic/view',
+                'GET topic/<id:\d+>' => 'topic/view',
             ],
         ],
         'i18n' => [
