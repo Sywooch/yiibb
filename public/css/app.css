@@ -354,18 +354,31 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
   float: left;
   white-space: nowrap; }
 
-.pun .pagelink strong, .pun .pagelink a, .pun .pagelink span.spacer {
-  border-style: none none none solid;
-  border-width: 0 0 0 1px;
+.pagination {
   display: inline-block;
-  padding: 0 12px 0 10px;
-  margin-right: -6px; }
+  list-style: none;
+  padding-left: 0; }
 
-.pun .pagelink .item1 {
-  border: 0; }
+.pagination > li {
+  display: inline; }
 
-.pun .pagelink .pages-label {
-  display: inline-block; }
+.pagination > li.active {
+  font-weight: bold;
+  pointer-events: none;
+  cursor: default; }
+
+.pagination > li.active a {
+  color: #000000; }
+
+.pagination > li {
+  border-color: #DEDFDF;
+  border-left-style: solid;
+  border-left-width: 1px;
+  padding: 0 1em; }
+
+.pagination > li:first-child {
+  border-left: 0 none;
+  padding-left: 0; }
 
 .pun .postlink {
   float: right;
