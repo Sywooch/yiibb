@@ -324,22 +324,26 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 
 /* Breadcrumbs, Postlink, Pagination
 ----------------------------------------------------------------*/
-.pun .linksb .inbox, .pun .postlinksb .inbox {
+.pun .linksb .inbox, .pun .postlinksb .inbox, .pun .linkst .inbox, .pun .postlinkst .inbox {
   overflow: hidden; }
 
-.pun .linksb, .pun .postlinksb, .pun .crumbs {
+.pun .linksb, .pun .postlinksb, .pun .linkst, .pun .postlinkst, .pun .crumbs {
   clear: both;
   position: relative; }
 
-.pun .linksb .crumbs, .pun .postlinksb .crumbs {
+.pun .linksb .crumbs, .pun .postlinksb .crumbs, .pun .linkst .crumbs, .pun .postlinkst .crumbs {
   font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
   font-size: 1.154em; }
+
+.pun .linkst .crumbsplus .pagepost, .pun .postlinkst .crumbsplus .pagepost {
+  border-top-style: dotted;
+  border-top-width: 1px; }
 
 .pun .linksb .crumbsplus .pagepost, .pun .postlinksb .crumbsplus .pagepost {
   border-bottom-style: dotted;
   border-bottom-width: 1px; }
 
-.pun .postlinksb .crumbs {
+.pun .postlinksb .crumbs, .pun .postlinkst .crumbs {
   margin-right: 11em; }
 
 .pun .crumbs li {
@@ -352,33 +356,45 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 
 .pun .pagelink {
   float: left;
-  white-space: nowrap; }
+  white-space: nowrap;
+  padding: 8px 0; }
 
-.pagination {
+.pun .pagelink strong {
+  display: inline-block;
+  padding: 0 12px 0 10px; }
+
+.pun .pagination {
   display: inline-block;
   list-style: none;
+  border-color: #b9c5ce;
+  padding: 0; }
+
+.pun .pagination > li {
+  display: inline;
+  border-right-style: solid;
+  border-width: 1px;
+  padding: 2px 0; }
+
+.pun .pagination > li:first-child {
+  border-left: none;
   padding-left: 0; }
 
-.pagination > li {
-  display: inline; }
+.pun .pagination > li a {
+  padding: 0 12px 0 10px; }
 
-.pagination > li.active {
+.pun .pagination > li.disabled {
+  border-style: none; }
+
+.pun .pagination > li.next {
+  border-style: none; }
+
+.pun .pagination > li.active {
   font-weight: bold;
   pointer-events: none;
   cursor: default; }
 
-.pagination > li.active a {
+.pun .pagination > li.active a {
   color: #000000; }
-
-.pagination > li {
-  border-color: #DEDFDF;
-  border-left-style: solid;
-  border-left-width: 1px;
-  padding: 0 1em; }
-
-.pagination > li:first-child {
-  border-left: 0 none;
-  padding-left: 0; }
 
 .pun .postlink {
   float: right;

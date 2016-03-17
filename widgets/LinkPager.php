@@ -2,7 +2,7 @@
 
 namespace app\widgets;
 
-use Yii;
+use yii;
 use yii\helpers\Html;
 
 /**

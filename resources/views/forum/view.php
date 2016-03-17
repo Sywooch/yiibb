@@ -11,11 +11,13 @@ $this->params['page'] = 'viewforum';
 $this->params['breadcrumbs'] = [$this->title];
 
 ?>
-<div class="linksb">
+<div class="linkst">
     <div class="inbox crumbsplus">
         <?= Breadcrumbs::widget() ?>
-        <div class="pagelink">
-            <?= LinkPager::widget(['pagination' => $dataProvider->pagination]) ?>
+        <div class="pagepost">
+            <div class="pagelink">
+                <?= LinkPager::widget(['pagination' => $dataProvider->pagination]) ?>
+            </div>
         </div>
         <div class="clearer"></div>
     </div>
