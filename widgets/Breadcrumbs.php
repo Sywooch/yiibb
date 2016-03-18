@@ -1,6 +1,7 @@
 <?php
 namespace app\widgets;
 
+use yii;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs as YiiBreadcrumbs;
 
@@ -21,7 +22,7 @@ class Breadcrumbs extends YiiBreadcrumbs
     public function init()
     {
         $this->homeLink = [
-            'label' => 'asd',
+            'label' => Yii::$app->setting->get('board_title'),
             'url' => Url::home(),
         ];
 
