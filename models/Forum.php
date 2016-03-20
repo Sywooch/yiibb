@@ -22,6 +22,8 @@ use yii\db\ActiveQuery;
  * @property integer $status_id
  * @property string $updated_at
  * @property string $created_at
+ * 
+ * @property Category $category
  */
 class Forum extends ActiveRecord
 {
@@ -34,7 +36,7 @@ class Forum extends ActiveRecord
     }
 
     /**
-     * @return ActiveQuery|Category
+     * @return ActiveQuery
      */
     public function getCategory()
     {

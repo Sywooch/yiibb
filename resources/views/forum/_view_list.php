@@ -14,5 +14,5 @@
     </td>
     <td class="tc2"><?= $model->count_replies ?></td>
     <td class="tc3"><?= $model->count_views ?></td>
-    <td class="tcr"><a href="viewtopic.php?pid=1#p1">2016-02-28 16:42:54</a> <span class="byuser"><?= $model->last_post_username ?></span></td>
+    <td class="tcr"><a href=""><?= Yii::$app->formatter->asRelativeTime($model->last_post_created_at) ?></a> <span class="byuser"><?= $model->last_post_username ?></span></td>
 </tr>

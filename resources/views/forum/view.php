@@ -40,7 +40,6 @@ $this->params['breadcrumbs'] = [$this->title];
                     'dataProvider' => $dataProvider,
                     'options' => [],
                     'layout' => "{items}",
-                    'itemOptions' => ['tag' => false],
                     'itemView' => function ($model, $key, $index, $widget) use ($dataProvider) {
                         return $this->render('_view_list', [
                             'model' => $model,

@@ -2,9 +2,10 @@
 
 namespace app\models;
 
+use yii\db\ActiveRecord;
+use yii\db\ActiveQuery;
+
 /**
- * This is the model class for table "topic".
- *
  * @property integer $id
  * @property string $forum_id
  * @property string $subject
@@ -21,8 +22,10 @@ namespace app\models;
  * @property integer $status_id
  * @property string $updated_at
  * @property string $created_at
+ *
+ * @property Forum $forum
  */
-class Topic extends \yii\db\ActiveRecord
+class Topic extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -30,5 +33,13 @@ class Topic extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'topic';
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getForum()
+    {
+        return $this->hasOne(Forum::className(), ['id' => 'forum_id']);
     }
 }
