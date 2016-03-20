@@ -63,14 +63,6 @@ class Setting extends Component
         return $value;
     }
 
-    public function set($name, $value = null)
-    {
-
-    }
-
-    /**
-     *
-     */
     private function loadData()
     {
         if (isset($this->_data)) {
