@@ -34,8 +34,8 @@ AppAsset::register($this);
         <div id="brdheader" class="block">
             <div class="box">
                 <div class="inbox" id="brdtitle">
-                    <h1><a href="<?= url(['home/index']) ?>"><?= setting('o_board_title') ?></a></h1>
-                    <div id="brddesc"><p><span>Unfortunately no one can be told what FluxBB is - you have to see it for yourself.</span></p></div>
+                    <h1><a href="<?= url(['home/index']) ?>"><?= setting('board_title') ?></a></h1>
+                    <div id="brddesc"><p><span><?= setting('board_description') ?></span></p></div>
                 </div>
                 <div class="inbox" id="brdmenu">
                     <?= Menu::widget() ?>
