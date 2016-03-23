@@ -42,6 +42,9 @@ class m100000_000007_create_user_table extends Migration
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),
         ], $tableOptions);
+
+        $this->createIndex('idx-user-username', $this->tableName, 'username', true);
+        $this->createIndex('idx-user-email', $this->tableName, 'email', true);
     }
 
     public function down()

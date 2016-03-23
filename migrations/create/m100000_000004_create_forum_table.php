@@ -31,6 +31,8 @@ class m100000_000004_create_forum_table extends Migration
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),
         ], $tableOptions);
+
+        $this->createIndex('idx-forum-category_id', $this->tableName, 'category_id');
     }
 
     public function down()

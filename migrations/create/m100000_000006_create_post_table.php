@@ -26,6 +26,9 @@ class m100000_000006_create_post_table extends Migration
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),
         ], $tableOptions);
+
+        $this->createIndex('idx-post-topic_id', $this->tableName, 'topic_id');
+        $this->createIndex('idx-post-user_id', $this->tableName, 'user_id');
     }
 
     public function down()

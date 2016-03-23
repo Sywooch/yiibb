@@ -15,11 +15,10 @@ class m100000_000003_create_setting_table extends Migration
         }
         
         $this->createTable($this->tableName, [
-            'name' => $this->string(255),
+            'name' => $this->string(255)->notNull(),
             'value' => $this->text(),
+            'PRIMARY KEY (name)',
         ], $tableOptions);
-
-        $this->createIndex('name', $this->tableName, 'name', true);
     }
 
     public function down()
