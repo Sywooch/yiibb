@@ -17,6 +17,22 @@ return [
             'charset' => 'utf8',
             'tablePrefix' => '',
         ],
+        'linuxforumDb' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=linuxforum',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+            'tablePrefix' => '',
+        ],
+        'punDb' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=punbb',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+            'tablePrefix' => '',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
