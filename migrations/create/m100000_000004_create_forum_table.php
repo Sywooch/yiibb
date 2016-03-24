@@ -22,7 +22,6 @@ class m100000_000004_create_forum_table extends Migration
             'count_topics' => $this->integer()->defaultValue(0),
             'count_posts' => $this->integer()->defaultValue(0),
             'last_post_id' => $this->integer()->unsigned(),
-            'last_post_user_id' => $this->integer()->unsigned(),
             'last_post_username' => $this->string(40),
             'last_post_created_at' => $this->timestamp(),
             'position' => $this->smallInteger()->unsigned()->notNull()->defaultValue(1),
