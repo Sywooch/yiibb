@@ -6,6 +6,15 @@
 
 $this->name = 'index';
 ?>
+<?php if (empty($categories)): ?>
+<div class="block" id="idx0">
+    <div class="box">
+        <div class="inbox">
+            <p>Board is empty.</p>
+        </div>
+    </div>
+</div>
+<?php else: ?>
 <div class="blocktable" id="idx1">
     <?php foreach ($categories as $category): ?>
     <h2><span><?= e($category->name) ?></span></h2>
@@ -36,7 +45,7 @@ $this->name = 'index';
                     </td>
                     <td class="tc2"><?= e($forum->count_topics) ?></td>
                     <td class="tc3"><?= e($forum->count_posts) ?></td>
-                    <td class="tcr"><a href="viewtopic.php?pid=1#p1">2016-02-28 16:42:54</a> <span class="byuser">by Sonic</span></td>
+                    <td class="tcr"><a href="">2016-02-28 16:42:54</a> <span class="byuser"><?= e($forum->last_post_username) ?></span></td>
                 </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -45,7 +54,7 @@ $this->name = 'index';
     </div>
     <?php endforeach ?>
 </div>
-
+<?php endif ?>
 <div class="block" id="brdstats">
     <h2><span>Board information</span></h2>
     <div class="box">
