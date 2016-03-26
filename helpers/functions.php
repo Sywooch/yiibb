@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Url;
-use yii\helpers\ArrayHelper;
 
 if (!function_exists('e')) {
     /**
