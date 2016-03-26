@@ -2,7 +2,7 @@
 
 use app\widgets\Breadcrumbs;
 use app\widgets\LinkPager;
-use app\widgets\TopicList;
+use app\widgets\ForumViewList;
 
 /** @var \app\models\Forum $forum */
 
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'] = [$this->title];
                 </tr>
                 </thead>
                 <tbody>
-                <?= TopicList::widget([
+                <?= ForumViewList::widget([
                     'dataProvider' => $dataProvider,
                     'options' => [],
                     'layout' => "{items}",

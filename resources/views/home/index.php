@@ -3,6 +3,7 @@
 \app\resources\assets\bundles\AppAsset::register($this);
 
 /** @var \app\models\Category[] $categories */
+/** @var \app\models\Forum $forum */
 
 $this->name = 'index';
 ?>
@@ -45,7 +46,7 @@ $this->name = 'index';
                     </td>
                     <td class="tc2"><?= e($forum->count_topics) ?></td>
                     <td class="tc3"><?= e($forum->count_posts) ?></td>
-                    <td class="tcr"><a href="">2016-02-28 16:42:54</a> <span class="byuser"><?= e($forum->last_post_username) ?></span></td>
+                    <td class="tcr"><a href="<?= url(['post/view', 'id' => $forum->last_post_id]) . '#p' . $forum->last_post_id ?>"><?= Yii::$app->formatter->asDatetime($forum->last_post_created_at) ?></a> <span class="byuser"><?= e($forum->last_post_username) ?></span></td>
                 </tr>
                 <?php endforeach; ?>
                 </tbody>

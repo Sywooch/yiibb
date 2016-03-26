@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use app\resources\assets\bundles\AppAsset;
 use app\widgets\Menu;
 
-/* @var $this \app\components\web\View */
+/* @var $this \app\components\view\View */
 /* @var $content string */
 
 AppAsset::register($this);
