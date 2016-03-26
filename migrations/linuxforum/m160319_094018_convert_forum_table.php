@@ -70,6 +70,7 @@ class m160319_094018_convert_forum_table extends Migration
                     'category_id' => $category,
                     'count_topics' => $countTopics,
                     'count_posts' => $countPosts - $countTopics,
+                    'last_post_id' => $lastTopic['last_post_id'],
                     'last_post_username' => $lastTopic['last_post_username'],
                     'last_post_created_at' => $lastTopic['last_post_created_at'],
                     'status_id' => 1,

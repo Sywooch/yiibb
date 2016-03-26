@@ -16,6 +16,14 @@ class m160319_094051_convert_setting_table extends Migration
             'name' => 'board_description',
             'value' => 'Форум о linux'
         ]);
+        $this->insert($this->tableName, [
+            'name' => 'date_format',
+            'value' => 'Y-m-d'
+        ]);
+        $this->insert($this->tableName, [
+            'name' => 'time_format',
+            'value' => 'H:i:s'
+        ]);
     }
 
     public function down()

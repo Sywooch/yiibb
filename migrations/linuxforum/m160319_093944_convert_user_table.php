@@ -9,6 +9,11 @@ class m160319_093944_convert_user_table extends Migration
 
     public function up()
     {
+        // CREATE TEMPORARY TABLE IF NOT EXISTS temp_table(`id` int(10)) ENGINE=MEMORY;
+        // TRUNCATE TABLE temp_table;
+        // INSERT INTO `temp_table` (SELECT MIN(id) as id FROM `user` GROUP BY `email`);
+        // DELETE FROM `user` WHERE `id` NOT IN (SELECT `id` FROM `temp_table`);
+
         $this->dropColumn('{{%user}}', 'id');
         $this->addColumn('{{%user}}', 'id', Schema::TYPE_INTEGER . ' first');
 

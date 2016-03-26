@@ -37,7 +37,7 @@ class m100000_000007_create_user_table extends Migration
             'language' => $this->string(10),
             'timezone' => $this->string(255),
             'signature' => $this->text(),
-            'show_signature' => $this->boolean(),
+            'show_signature' => $this->boolean()->defaultValue(true),
             'status_id' => $this->boolean()->notNull()->defaultValue(true),
             'updated_at' => $this->timestamp()->notNull(),
             'created_at' => $this->timestamp()->notNull(),
