@@ -6,7 +6,7 @@ use app\components\controller\Controller;
 
 class PostController extends Controller
 {
-    public function viewAction()
+    public function actionView()
     {
         return $this->render('view');
     }
