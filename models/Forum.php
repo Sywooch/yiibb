@@ -13,10 +13,9 @@ use yii\db\ActiveQuery;
  * @property string $moderators
  * @property integer $count_topics
  * @property integer $count_posts
- * @property integer $last_post
  * @property integer $last_post_id
- * @property integer $last_post_user_id
  * @property string $last_post_username
+ * @property string $last_post_created_at
  * @property integer $position
  * @property integer $category_id
  * @property integer $status_id
