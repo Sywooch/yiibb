@@ -6,6 +6,19 @@ use yii\i18n\Formatter as YiiFormatter;
 
 class Formatter extends YiiFormatter
 {
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        $setting = \Yii::$app->setting;
+
+        $this->datetimeFormat = 'php:' . $setting->get('date_format') . ' ' . $setting->get('time_format');
+        $this->dateFormat = 'php:' . $setting->get('date_format');
+        $this->timeFormat = 'php:' . $setting->get('time_format');
+        $this->thousandSeparator = ' ';
+    }
+
     public function asMarkdown($text)
     {
         $parser = new \Parsedown();
