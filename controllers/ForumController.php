@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use yii\web\Controller;
+use app\components\controller\Controller;
 use yii\data\ActiveDataProvider;
 use app\models\Forum;
 use app\models\Topic;

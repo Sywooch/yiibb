@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
-use app\components\web\Controller;
+use app\components\controller\Controller;
+use yii\data\ActiveDataProvider;
 use app\models\Topic;
+use app\models\Post;
 
 class TopicController extends Controller
 {
@@ -11,9 +13,28 @@ class TopicController extends Controller
     {
         $topic = Topic::find()
             ->where(['id' => $id])
-            //->with('forum')
+            ->with('forum')
             ->one();
 
-        return $this->render('view', ['topic' => $topic]);
+        $query = Post::find()
+            ->where(['topic_id' => $id])
+            ->with('user');
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'forcePageParam' => false,
+                'pageSizeLimit' => false,
+                'defaultPageSize' => 30,
+            ],
+        ]);
+
+        $posts = $dataProvider->getModels();
+
+        return $this->render('view', [
+            'dataProvider' => $dataProvider,
+            'topic' => $topic,
+            'posts' => $posts,
+        ]);
     }
 }

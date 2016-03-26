@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\Category;
-use yii\web\Controller;
+use app\components\controller\Controller;
 
 class HomeController extends Controller
 {

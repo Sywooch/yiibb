@@ -2,7 +2,7 @@
 
 namespace app\controllers\auth;
 
-use yii\web\Controller;
+use app\components\controller\Controller;
 
 class AuthController extends Controller
 {
