@@ -27,6 +27,9 @@ $config = [
         'setting' => [
             'class' => 'app\components\setting\Setting',
         ],
+        'formatter' => [
+            'class' => 'app\components\formatter\Formatter',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -34,7 +37,7 @@ $config = [
             'cookieValidationKey' => 'jaklesHtNzHONAxk2Ca6UjR49iHgN_9U',
         ],
         'view' => [
-            'class' => 'app\components\web\View',
+            'class' => 'app\components\view\View',
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\web;
+namespace app\components\view;
 
 use yii\web\View as YiiView;
 
