@@ -6,7 +6,7 @@
 html {
   overflow-y: scroll; }
 
-html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, .pun h4, .pun h5, .pun pre, .pun blockquote,
+html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, .pun h4, .pun h5, .pun pre,
 .pun ul, .pun ol, .pun li, .pun dl, .pun dt, .pun dd, .pun th, .pun td, .pun fieldset, .pun legend .pun img,
 .pun abbr, .pun cite {
   border: 0;
@@ -633,6 +633,9 @@ MAIN POSTS
   margin-left: -218px;
   position: relative; }
 
+.pun .blockpost .postfoot .postfootleft {
+  border-top: 1px dashed #ddd; }
+
 .pun .blockpost .postleft dl {
   padding: 0; }
 
@@ -765,7 +768,11 @@ MAIN POSTS
   margin: 0.75em 1em;
   padding: 0; }
 
-.pun .quotebox {
+blockquote {
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  background: #f8f9f0 none repeat scroll 0 0;
+  border-color: #7aadbd;
+  color: #566579;
   border-style: solid;
   border-width: 1px 1px 1px 3px;
   margin: 0.75em 1em;
