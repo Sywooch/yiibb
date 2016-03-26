@@ -83,6 +83,7 @@ $config = [
                 'POST password/email' => 'auth/password/send-email',
 
                 // User Routes...
+                'GET user/<id:\d+>' => 'user/view',
                 'GET list' => 'user/list',
 
                 // Forum Routes...
@@ -92,6 +93,9 @@ $config = [
                 // Topic Routes...
                 'GET topic/<id:\d+>/page/<page:\d+>' => 'topic/view',
                 'GET topic/<id:\d+>' => 'topic/view',
+
+                // Post Routes...
+                'GET post/<id:\d+>' => 'post/view',
             ],
         ],
         'i18n' => [
