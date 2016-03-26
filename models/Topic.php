@@ -42,4 +42,13 @@ class Topic extends ActiveRecord
     {
         return $this->hasOne(Forum::className(), ['id' => 'forum_id']);
     }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getPosts()
+    {
+        return $this->hasMany(Post::className(), ['topic_id' => 'id'])
+            ->inverseOf('topic');
+    }
 }
