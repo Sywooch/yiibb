@@ -19,7 +19,7 @@ use yii\helpers\Url;
                         <dd class="usertitle"><strong><?= $model->user->title ?></strong></dd>
                         <?php endif ?>
                         <dd><span>Registered: 2016-01-02</span></dd>
-                        <dd><span>Posts: 1</span></dd>
+                        <dd><span>Posts: <?= $model->user->count_posts ?></span></dd>
                     </dl>
                 </div>
                 <div class="postright">
