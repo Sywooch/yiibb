@@ -37,7 +37,7 @@ class m160319_094004_convert_post_table extends Migration
 
         $this->execute('ALTER TABLE ' . $this->tableName . ' ADD PRIMARY KEY(`id`)');
         $this->execute('ALTER TABLE ' . $this->tableName . ' AUTO_INCREMENT = ' . $this->getMaxId());
-        $this->execute('ALTER TABLE ' . $this->tableName . ' CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
+        $this->execute('ALTER TABLE ' . $this->tableName . ' CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT');
     }
 
     private function getMaxId()

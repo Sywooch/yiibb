@@ -25,7 +25,8 @@ class m160319_094012_convert_topic_table extends Migration
 
             $posts = $this->countPosts($topic['id']);
             if ($posts < 1) {
-                echo "The topic #" . $topic['id'] . " haven't posts. Continue.\n";
+                echo "The topic #" . $topic['id'] . " haven't posts. Delete.\n";
+                $this->execute('DELETE FROM {{%topic}} WHERE id = ' . $topic['id']);
                 continue;
             }
             $replies = $posts - 1;
@@ -58,6 +59,8 @@ class m160319_094012_convert_topic_table extends Migration
         $this->execute('ALTER TABLE ' . $this->tableName . ' ADD PRIMARY KEY(`id`)');
         $this->execute('ALTER TABLE ' . $this->tableName . ' AUTO_INCREMENT = ' . $this->getMaxId());
         $this->execute('ALTER TABLE ' . $this->tableName . ' CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
+
+        $this->execute('DELETE FROM {{%post}} WHERE topic_id NOT IN (SELECT t.id FROM {{%topic}} t)');
     }
     
     private function getMaxId()

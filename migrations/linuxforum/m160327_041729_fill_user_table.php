@@ -4,7 +4,7 @@ use app\migrations\linuxforum\Migration;
 
 class m160327_041729_fill_user_table extends Migration
 {
-    public function up()
+    public function up2()
     {
         $sql = 'SELECT * FROM {{%user}}';
         $query = $this->linuxforumDb->createCommand($sql);
