@@ -18,6 +18,14 @@ class UserController extends Controller
     
     public function actionList()
     {
-        return $this->render('list');
+        $model = new \app\models\SearchUsers();
+        $dataProvider = $model->search(\Yii::$app->request->get());
+        $users = $dataProvider->getModels();
+
+        return $this->render('list', [
+            'model' => $model,
+            'users' => $users,
+            'dataProvider' => $dataProvider
+        ]);
     }
 }

@@ -1,78 +1,135 @@
+<?php
+
+use yii\data\ActiveDataProvider;
+use yii\db\ActiveRecord;
+use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\widgets\ActiveForm;
+
+use app\models\User;
+use app\models\SearchUsers;
+use app\widgets\LinkPager;
+
+/* @var \app\components\view\View $this */
+/* @var ActiveDataProvider $dataProvider */
+/* @var array|ActiveRecord[] $users */
+/* @var User $user */
+/* @var SearchUsers $model */
+
+
+$this->title = \Yii::t('app/userlist', 'Title');
+$this->params['page'] = 'userlist';
+
+$formatter = Yii::$app->formatter;
+?>
 <div class="blockform">
-    <h2><span>User search</span></h2>
+    <h2><span><?= $this->title ?></span></h2>
     <div class="box">
-        <form action="userlist.php" method="get" id="userlist">
-            <div class="inform">
-                <fieldset>
-                    <legend>Find and sort users</legend>
-                    <div class="infldset">
-                        <label class="conl">Username<br><input type="text" maxlength="25" size="25" value="" name="username"><br></label>
-                        <label class="conl">User group
-                            <br><select name="show_group">
-                                <option selected="selected" value="-1">All</option>
-                                <option value="1">Administrators</option>
-                                <option value="2">Moderators</option>
-                                <option value="4">Members</option>
-                            </select>
-                            <br></label>
-                        <label class="conl">Sort by
-                            <br><select name="sort_by">
-                                <option selected="selected" value="username">Username</option>
-                                <option value="registered">Registered</option>
-                                <option value="num_posts">Number of posts</option>
-                            </select>
-                            <br></label>
-                        <label class="conl">Sort order
-                            <br><select name="sort_dir">
-                                <option selected="selected" value="ASC">Ascending</option>
-                                <option value="DESC">Descending</option>
-                            </select>
-                            <br></label>
-                        <p class="clearb">Enter a username to search for and/or a user group to filter by. The username field can be left blank. Use the wildcard character * for partial matches. Sort users by name, date registered or number of posts and in ascending/descending order.</p>
-                    </div>
-                </fieldset>
-            </div>
-            <p class="buttons"><input type="submit" accesskey="s" value="Submit" name="search"></p>
-        </form>
+        <?php $form = ActiveForm::begin([
+            'action' => ['user/list'],
+            'method' => 'get',
+            'options' => ['id' => 'userlist'],
+            'enableClientValidation' => false,
+            'enableClientScript' => false,
+        ]) ?>
+        <div class="inform">
+            <fieldset>
+                <legend><?= \Yii::t('app/userlist', 'Legend') ?></legend>
+                <div class="infldset">
+                    <?= $form->field($model, 'username', [
+                        'template' => "{label}\n{input}",
+                        'options' => [
+                            'class' => 'conl'
+                        ]
+                    ])->textInput([
+                        'size' => 25,
+                        'maxlength' => 25,
+                    ])->label(\Yii::t('app/userlist', 'Username search')) ?>
+
+                    <?= $form->field($model, 'group_id', [
+                        'template' => "{label}\n{input}",
+                        'options' => [
+                            'class' => 'conl'
+                        ]
+                    ])->dropDownList($model->groupItems, [
+                    ])->label(\Yii::t('app/userlist', 'User group search')) ?>
+
+                    <?= $form->field($model, 'sort_by', [
+                        'template' => "{label}\n{input}",
+                        'options' => [
+                            'class' => 'conl'
+                        ]
+                    ])->dropDownList($model->sortItems, [
+                    ])->label(\Yii::t('app/userlist', 'Sort by search')) ?>
+
+                    <?= $form->field($model, 'sort_dir', [
+                        'template' => "{label}\n{input}",
+                        'options' => [
+                            'class' => 'conl'
+                        ]
+                    ])->dropDownList([
+                        'ASC' => \Yii::t('app/userlist', 'Ascending'),
+                        'DESC' => \Yii::t('app/userlist', 'Descending'),
+                    ], [
+                    ])->label(\Yii::t('app/userlist', 'Sort order search')) ?>
+                    <p class="clearb"><?= \Yii::t('app/userlist', 'Info') ?></p>
+                </div>
+            </fieldset>
+        </div>
+        <p class="buttons"><?= Html::submitButton(\Yii::t('app/userlist', 'Submit')) ?></p>
+        <?php ActiveForm::end() ?>
     </div>
 </div>
-
 <div class="linkst">
     <div class="inbox">
-        <p class="pagelink"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
-        <div class="clearer"></div>
+        <div class="pagelink">
+            <?= LinkPager::widget(['pagination' => $dataProvider->pagination]) ?>
+        </div>
     </div>
 </div>
-
-<div class="blocktable" id="users1">
-    <h2><span>User list</span></h2>
+<div id="users1" class="blocktable">
+    <h2><span><?= \Yii::t('app/userlist', 'User list') ?></span></h2>
     <div class="box">
         <div class="inbox">
             <table>
                 <thead>
                 <tr>
-                    <th scope="col" class="tcl">Username</th>
-                    <th scope="col" class="tc2">Title</th>
-                    <th scope="col" class="tc3">Posts</th>
-                    <th scope="col" class="tcr">Registered</th>
+                    <th class="tcl" scope="col"><?= \Yii::t('app/userlist', 'Username') ?></th>
+                    <th class="tc2" scope="col"><?= \Yii::t('app/userlist', 'User title') ?></th>
+                    <?php if(1 == '1'): ?>
+                        <th class="tc3" scope="col"><?= \Yii::t('app/userlist', 'User posts') ?></th>
+                    <?php endif; ?>
+                    <th class="tcr" scope="col"><?= \Yii::t('app/userlist', 'User registered') ?></th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td class="tcl"><a href="profile.php?id=2">Sonic</a></td>
-                    <td class="tc2">Administrator</td>
-                    <td class="tc3">1</td>
-                    <td class="tcr">2016-02-28</td>
-                </tr>
-                </tbody>
+                <?php if($users): ?>
+                    <tbody>
+                    <?php foreach($users as $user): ?>
+                        <tr>
+                            <td class="tcl"><a href="<?= Url::to(['user/view', 'id' => $user->id])?>"><?= $formatter->asText($user->username) ?></a></td>
+                            <td class="tc2"><?= $formatter->asText($user->title) ?></td>
+                            <?php if(1 == '1'): ?>
+                                <td class="tc3"><?= $formatter->asInteger($user->count_posts) ?></td>
+                            <?php endif; ?>
+                            <td class="tcr"><?= $formatter->asDate($user->created_at) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                <?php else: ?>
+                    <tbody>
+                    <tr>
+                        <td colspan="4" class="tcl"><?= \Yii::t('app/userlist', 'No result') ?></td>
+                    </tr>
+                    </tbody>
+                <?php endif; ?>
             </table>
         </div>
     </div>
 </div>
-
-<div class="linksb">
+<div class="linkst">
     <div class="inbox">
-        <p class="pagelink"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
-        <div class="clearer"></div>
+        <div class="pagelink">
+            <?= LinkPager::widget(['pagination' => $dataProvider->pagination]) ?>
+        </div>
     </div>
 </div>

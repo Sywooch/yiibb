@@ -1,10 +1,12 @@
 <?php
 
 use app\widgets\Breadcrumbs;
+use app\widgets\LinkPager;
 use app\widgets\Post;
 
-/* @var \app\models\Topic $topic */
-/* @var \app\models\Post[] $posts */
+/** @var \app\models\Topic $topic */
+/** @var \app\models\Post[] $posts */
+/** @var \yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = e($topic->subject);
 $this->name = 'viewtopic';
@@ -19,7 +21,9 @@ $postCount = 1;
     <div class="inbox crumbsplus">
         <?= Breadcrumbs::widget() ?>
         <div class="pagepost">
-            <p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+            <div class="pagelink">
+                <?= LinkPager::widget(['pagination' => $dataProvider->pagination]) ?>
+            </div>
         </div>
         <div class="clearer"></div>
     </div>
@@ -31,7 +35,9 @@ $postCount = 1;
 <div class="postlinksb">
     <div class="inbox crumbsplus">
         <div class="pagepost">
-            <p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+            <div class="pagelink">
+                <?= LinkPager::widget(['pagination' => $dataProvider->pagination]) ?>
+            </div>
         </div>
         <?= Breadcrumbs::widget() ?>
         <div class="clearer"></div>

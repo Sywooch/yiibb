@@ -5,6 +5,7 @@ use app\widgets\LinkPager;
 use app\widgets\ForumViewList;
 
 /** @var \app\models\Forum $forum */
+/** @var \yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = $forum->name;
 $this->params['page'] = 'viewforum';
