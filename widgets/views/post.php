@@ -31,7 +31,7 @@ use yii\helpers\Url;
         </div>
         <div class="inbox">
             <div class="postfoot clearb">
-                <div class="postfootleft"><p>Пользователь: <span>Offline</span></p></div>
+                <div class="postfootleft"><p>User: <span>offline</span></p></div>
             </div>
         </div>
     </div>
