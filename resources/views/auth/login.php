@@ -36,10 +36,11 @@ use yii\widgets\ActiveForm;
                             'maxlength' => 255,
                         ])->label('Password<span class="field-required"> </span>') ?>
                         <div class="rbox clearb">
-                            <label><input type="checkbox" tabindex="3" value="1" name="save_pass">Log me in automatically each time I visit.<br></label>
+                            <?= $form->field($model, 'remember')
+                                ->checkbox(['label' => 'Log me in automatically each time I visit.']) ?>
                         </div>
                         <p class="clearb">If you have not registered or have forgotten your password click on the appropriate link below.</p>
-                        <p class="actions"><span><a tabindex="5" href="">Not registered yet?</a></span> <span><a tabindex="6" href="">Forgotten your password?</a></span></p>
+                        <p class="actions"><span><a tabindex="5" href="<?= url(['auth/auth/register-form']) ?>">Not registered yet?</a></span> <span><a tabindex="6" href="<?= url(['auth/password/forgot-form']) ?>">Forgotten your password?</a></span></p>
                     </div>
                 </fieldset>
             </div>
