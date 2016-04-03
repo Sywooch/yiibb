@@ -351,12 +351,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "c7d2b6eb29d36d647bab3a4c37c9fd69059b7da6"
+                "reference": "81c67c9859d5c78949561abe12acbe2fa427210c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/c7d2b6eb29d36d647bab3a4c37c9fd69059b7da6",
-                "reference": "c7d2b6eb29d36d647bab3a4c37c9fd69059b7da6",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/81c67c9859d5c78949561abe12acbe2fa427210c",
+                "reference": "81c67c9859d5c78949561abe12acbe2fa427210c",
                 "shasum": ""
             },
             "require": {
@@ -437,7 +437,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-03-29 15:33:00"
+            "time": "2016-04-01 19:28:23"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -654,12 +654,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "e64170ffa5678be6cb8c3decf92feac8142aa523"
+                "reference": "4dd9f52e2a376a875d998de6ab4c381291b0c69e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/e64170ffa5678be6cb8c3decf92feac8142aa523",
-                "reference": "e64170ffa5678be6cb8c3decf92feac8142aa523",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/4dd9f52e2a376a875d998de6ab4c381291b0c69e",
+                "reference": "4dd9f52e2a376a875d998de6ab4c381291b0c69e",
                 "shasum": ""
             },
             "require": {
@@ -696,7 +696,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2016-03-21 19:11:20"
+            "time": "2016-03-30 22:44:25"
         },
         {
             "name": "yiisoft/yii2-debug",
