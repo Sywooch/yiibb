@@ -96,6 +96,9 @@ $config = [
 
                 // Post Routes...
                 'GET post/<id:\d+>' => 'post/view',
+
+                // Search Routes...
+                'GET search' => 'search/index',
             ],
         ],
         'i18n' => [
@@ -105,7 +108,7 @@ $config = [
                     'basePath' => '@app/resources/messages',
                     //'sourceLanguage' => 'en-US',
                     'fileMap' => [
-                        'app/common' => 'common.php',
+                        'app/navigation' => 'navigation.php',
                     ],
                 ],
             ],
