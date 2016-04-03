@@ -8,7 +8,7 @@ use app\widgets\ForumViewList;
 /** @var \yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = $forum->name;
-$this->params['page'] = 'viewforum';
+$this->name = 'viewforum';
 $this->params['breadcrumbs'] = [$this->title];
 
 ?>
