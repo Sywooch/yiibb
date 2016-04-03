@@ -51,6 +51,11 @@ class Setting extends Component
         }
     }
 
+    /**
+     * @param $name
+     * @param null $default
+     * @return mixed|null
+     */
     public function get($name, $default = null)
     {
         $this->loadData();
@@ -63,6 +68,9 @@ class Setting extends Component
         return $value;
     }
 
+    /**
+     * 
+     */
     private function loadData()
     {
         if (isset($this->_data)) {
