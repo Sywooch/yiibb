@@ -41,9 +41,9 @@ class LoginForm extends Model
             ['email', 'required', 'message' => Yii::t('app/form', 'Required email')],
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'email', 'enableIDN' => true, 'message' => Yii::t('app/form', 'Valid email')],
-            ['email', 'exist', 'targetClass' => User::className(), 'message' => Yii::t('app/form', 'Exist email')],
+            ['email', 'exist', 'targetClass' => User::className(), 'message' => Yii::t('app/form', 'Not exist email')],
 
-            ['email', 'filter', 'filter' => 'trim'],
+            ['password', 'filter', 'filter' => 'trim'],
             ['password', 'required', 'message' => Yii::t('app/form', 'Required password')],
             ['password', 'string', 'min' => 6, 'tooShort' => Yii::t('app/form', 'String short password')],
             ['password', 'string', 'max' => 32, 'tooLong' => Yii::t('app/form', 'String long password')],
@@ -64,7 +64,7 @@ class LoginForm extends Model
         }
 
         $user = $this->getUser();
-        if (!$user || Yii::$app->security->generatePasswordHash($this->$attribute) !== $user->password) {
+        if (!$user || !Yii::$app->security->validatePassword($this->$attribute, $user->password_hash)) {
             $this->addError($attribute, Yii::t('app/form', 'Wrong user/password'));
         }
     }
@@ -108,9 +108,9 @@ class LoginForm extends Model
     }
 
     /**
-     * Finds user model by the form given username.
+     * Finds user model by the form given email.
      * @return User|null current user model.
-     * If null, it means the current user model will be not found with this username.
+     * If null, it means the current user model will be not found with this email.
      */
     protected function getUser()
     {

@@ -3,7 +3,20 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+/* @var \app\models\forms\LoginForm $model */
+
 ?>
+<?php if ($model->hasErrors()): ?>
+    <div id="posterror" class="block">
+        <h2><span><?= \Yii::t('app/login', 'Important') ?></span></h2>
+        <div class="box">
+            <?= Html::errorSummary($model, [
+                'class' => 'inbox error-info',
+                'header' => '<p>' . \Yii::t('app/login', 'Error summary') . '</p>',
+            ]) ?>
+        </div>
+    </div>
+<?php endif; ?>
 <div class="blockform">
     <h2><span>Login</span></h2>
     <div class="box">
@@ -31,7 +44,7 @@ use yii\widgets\ActiveForm;
                             'options' => [
                                 'class' => 'conl'
                             ]
-                        ])->textInput([
+                        ])->passwordInput([
                             'size' => 25,
                             'maxlength' => 255,
                         ])->label('Password<span class="field-required"> </span>') ?>

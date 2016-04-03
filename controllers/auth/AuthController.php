@@ -2,6 +2,7 @@
 
 namespace app\controllers\auth;
 
+use yii;
 use app\components\controller\Controller;
 use app\models\forms\LoginForm;
 
@@ -18,11 +19,26 @@ class AuthController extends Controller
     {
         $model = new LoginForm();
 
-        return var_dump($_POST);
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->redirect('/');
+        }
+
+        return $this->render('/auth/login', ['model' => $model]);
     }
 
     public function actionRegisterForm()
     {
         return $this->render('/auth/register');
+    }
+
+    /**
+     * Logout application action.
+     * @return string
+     */
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+
+        return $this->goHome();
     }
 }
