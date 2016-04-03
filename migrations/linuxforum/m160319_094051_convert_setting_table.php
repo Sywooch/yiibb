@@ -24,6 +24,10 @@ class m160319_094051_convert_setting_table extends Migration
             'name' => 'time_format',
             'value' => 'H:i:s'
         ]);
+        $this->insert($this->tableName, [
+            'name' => 'terms_text',
+            'value' => 'Enter your rules here'
+        ]);
     }
 
     public function down()
