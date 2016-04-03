@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\resources\assets\bundles\AppAsset;
-use app\widgets\Menu;
+use app\widgets\Navigation;
 
 /* @var $this \app\components\view\View */
 /* @var $content string */
@@ -38,7 +38,7 @@ AppAsset::register($this);
                     <div id="brddesc"><p><span><?= setting('board_description') ?></span></p></div>
                 </div>
                 <div class="inbox" id="brdmenu">
-                    <?= Menu::widget() ?>
+                    <?= Navigation::widget() ?>
                 </div>
                 <div class="inbox" id="brdwelcome">
                     <p class="conl">You are not logged in.</p>
