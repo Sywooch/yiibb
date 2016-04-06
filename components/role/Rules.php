@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\role\rules;
+namespace app\components\role;
 
 use yii;
 use app\models\User;

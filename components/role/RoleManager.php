@@ -2,13 +2,14 @@
 
 namespace app\components\role;
 
+use yii\base\Object;
 use yii\base\InvalidConfigException;
 use yii\base\InvalidParamException;
 use yii\db\Connection;
 use yii\db\Query;
 use yii\di\Instance;
 
-class RoleManager extends \yii\base\Component
+class RoleManager extends Object
 {
     /**
      * @var Connection|string
