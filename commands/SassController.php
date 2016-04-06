@@ -2,7 +2,7 @@
 
 namespace app\commands;
 
-use Yii;
+use yii;
 use yii\console\Controller;
 
 class SassController extends Controller
