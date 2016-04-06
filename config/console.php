@@ -6,8 +6,8 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
     'components' => [
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager',
+        'role' => [
+            'class' => 'app\components\role\RoleManager',
         ],
         'db' => [
             'class' => 'yii\db\Connection',

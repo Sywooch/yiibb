@@ -20,6 +20,7 @@ Yii::$container = new yii\di\Container;
  * Used for properties that are identical for both WebApplication and ConsoleApplication
  *
  * @property \app\components\setting\Setting $setting
+ * @property \app\components\role\RoleManager $role
  * @property \app\components\formatter\Formatter $formatter
  */
 abstract class BaseApplication extends yii\base\Application
@@ -29,6 +30,8 @@ abstract class BaseApplication extends yii\base\Application
 /**
  * Class WebApplication
  * Include only Web application related components here
+ * 
+ * @property \app\components\user\User $user
  */
 class WebApplication extends yii\web\Application
 {

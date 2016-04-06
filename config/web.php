@@ -39,10 +39,11 @@ $config = [
         'view' => [
             'class' => 'app\components\view\View',
         ],
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager',
+        'role' => [
+            'class' => 'app\components\role\RoleManager',
         ],
         'user' => [
+            'class' => 'app\components\user\User',
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
