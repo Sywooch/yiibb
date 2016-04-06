@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "48c46d6853a8fb9c333016d42418f02c",
-    "content-hash": "23e58d2d1b958760c23acee401604113",
+    "hash": "5c4f687746b48b6e99a838f5c63fff39",
+    "content-hash": "05b9d017f840c9be2274395f81c71322",
     "packages": [
         {
             "name": "bower-asset/jquery",
-            "version": "2.2.2",
+            "version": "2.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd"
+                "reference": "af22a351b2ea5801ffb1695abb3bb34d5bed9198"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
-                "reference": "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/af22a351b2ea5801ffb1695abb3bb34d5bed9198",
+                "reference": "af22a351b2ea5801ffb1695abb3bb34d5bed9198",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -351,12 +351,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "81c67c9859d5c78949561abe12acbe2fa427210c"
+                "reference": "cc3ee3882702c523212c2273639532ffcc54288e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/81c67c9859d5c78949561abe12acbe2fa427210c",
-                "reference": "81c67c9859d5c78949561abe12acbe2fa427210c",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/cc3ee3882702c523212c2273639532ffcc54288e",
+                "reference": "cc3ee3882702c523212c2273639532ffcc54288e",
                 "shasum": ""
             },
             "require": {
@@ -437,7 +437,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-04-01 19:28:23"
+            "time": "2016-04-06 13:28:13"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -751,12 +751,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "989d6c52c92e51f0d562729c329ee1012191cba2"
+                "reference": "0d93a9dbd55f2d0921b8e153554379bb213a2c7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/989d6c52c92e51f0d562729c329ee1012191cba2",
-                "reference": "989d6c52c92e51f0d562729c329ee1012191cba2",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/0d93a9dbd55f2d0921b8e153554379bb213a2c7f",
+                "reference": "0d93a9dbd55f2d0921b8e153554379bb213a2c7f",
                 "shasum": ""
             },
             "require": {
@@ -796,7 +796,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2016-03-21 19:13:26"
+            "time": "2016-04-05 09:53:13"
         }
     ],
     "aliases": [],
