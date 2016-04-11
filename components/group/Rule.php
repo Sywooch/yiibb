@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\role;
+namespace app\components\group;
 
 abstract class Rule extends \yii\base\Object
 {

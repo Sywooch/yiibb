@@ -15,7 +15,7 @@ class m100000_000008_create_user_group_table extends Migration
         }
 
         $this->createTable($this->tableName, [
-            'name' => $this->string(64)->unique(),
+            'name' => $this->string(64)->notNull()->unique(),
             'title' => $this->string(64),
             'description' => $this->text(),
             'updated_at' => $this->timestamp()->notNull(),

@@ -39,8 +39,8 @@ $config = [
         'view' => [
             'class' => 'app\components\view\View',
         ],
-        'role' => [
-            'class' => 'app\components\role\RoleManager',
+        'groupManager' => [
+            'class' => 'app\components\group\GroupManager',
         ],
         'user' => [
             'class' => 'app\components\user\User',

@@ -1,11 +1,12 @@
 <?php
 
-namespace app\components\role;
+namespace app\components\group\rules;
 
 use yii;
+use app\components\group\Rule;
 use app\models\User;
 
-class Rules extends \yii\base\Object
+class Rules extends Rule
 {
     /**
      * @var User
@@ -22,7 +23,7 @@ class Rules extends \yii\base\Object
         $this->role = $this->user->role;
     }
 
-    public function updatePostRule($item, $params)
+    public function execute($item, $params)
     {
         if ($this->role == 'administrator') {
             return true;
@@ -32,17 +33,5 @@ class Rules extends \yii\base\Object
         $post = $params['post'];
 
         return $post->user_id === $this->user->id;
-    }
-
-    public function updateProfileRule($item, $params)
-    {
-        if ($this->role == 'administrator') {
-            return true;
-        }
-
-        /** @var User $user */
-        $user = $params['user'];
-
-        return $user->id === $this->user->id;
     }
 }

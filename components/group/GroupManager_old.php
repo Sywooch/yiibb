@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\role;
+namespace app\components\group;
 
 use yii\base\Object;
 use yii\base\InvalidConfigException;
@@ -9,7 +9,7 @@ use yii\db\Connection;
 use yii\db\Query;
 use yii\di\Instance;
 
-class RoleManager extends Object
+class GroupManager_old extends Object
 {
     /**
      * @var Connection|string

@@ -11,6 +11,8 @@ class HomeController extends Controller
     {
         $categories = Category::find()->all();
 
+        var_dump(\Yii::$app->user->can('updatePost'));
+
         return $this->render('index', [
             'categories' => $categories,
         ]);
