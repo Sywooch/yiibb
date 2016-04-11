@@ -2,9 +2,9 @@
 
 use yii\db\Migration;
 
-class m100000_000008_create_user_group_table extends Migration
+class m100000_000010_create_user_group_assignment_table extends Migration
 {
-    public $tableName = '{{%user_group}}';
+    public $tableName = '{{%user_group_assignment}}';
 
     public function up()
     {
@@ -15,11 +15,10 @@ class m100000_000008_create_user_group_table extends Migration
         }
 
         $this->createTable($this->tableName, [
-            'name' => $this->string(64)->unique(),
-            'title' => $this->string(64),
-            'description' => $this->text(),
-            'updated_at' => $this->timestamp()->notNull(),
+            'group_name' => $this->string(64)->notNull(),
+            'permission_name' => $this->string(64)->notNull(),
             'created_at' => $this->timestamp()->notNull(),
+            'PRIMARY KEY (group_name, permission_name)',
         ], $tableOptions);
     }
 
